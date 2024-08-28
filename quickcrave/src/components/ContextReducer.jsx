@@ -16,7 +16,7 @@ switch(action.type){
         arr.find((food,index)=>{
             if(food.id===action.id){
                 {console.log(food.qty,parseInt(action.qty),action.price,food.price);}
-                arr[index]={...food,qty:parseInt(action.qty)+food.qty,price:food.price+action.price}
+                arr[index]={...food,qty:food.qty+parseInt(action.qty),price:food.price+action.price}
             }
             return arr
         })

@@ -28,7 +28,7 @@ async(req,res)=>{
         })
         res.json({success:true});
     } catch (error){
-        console.log(error);
+        console.log("Noooo",error);
         res.json({success:false});
     }
 });

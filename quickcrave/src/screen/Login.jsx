@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import Navbar from "../components/Navbar.jsx"
 import { json, Link,useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -36,35 +37,28 @@ function Login() {
     }
     return (
       <>
-       <div className="container">
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Email address
-            </label>
-            <input type="email" className="form-control" id="exampleInputEmail1" name="email" value={credentials.email} onChange={onchange} />
-            <div id="emailHelp" className="form-text mb-3">
-              We'll never share your email with anyone else.
-            </div>
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">
-              Password
-            </label>
-            <input
-              type="password"
-              className="form-control"
-              id="exampleInputPassword1"
-              name="password"
-              value={credentials.password} onChange={onchange}
-            />
-          </div>
-          <button type="submit" className="btn btn-success">
-            Submit
-          </button>
-          <Link className="m-3 btn btn-danger" to="/createuser">I am new User</Link>
-        </form>
+      <div style={{backgroundImage: 'url("https://images.pexels.com/photos/326278/pexels-photo-326278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")', height: '100vh', backgroundSize: 'cover' }}>
+      <div>
+        <Navbar />
       </div>
+      <div className='container'>
+        <form className='text-white w-50 m-auto mt-5 border bg-dark border-success rounded' onSubmit={handleSubmit}>
+          <div className="m-3">
+            <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+            <input type="email" className="form-control" name='email' value={credentials.email} onChange={onchange} aria-describedby="emailHelp" />
+            <div id="emailHelp" className="form-text">We'll never share your email with anyone.</div>
+          </div>
+          <div className="m-3">
+            <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+            <input type="password" className="form-control" value={credentials.password} onChange={onchange} name='password' />
+          </div>
+          <button type="submit" className="m-3 btn btn-success">Submit</button>
+          <Link to="/createuser" className="m-3 mx-1 btn btn-danger">New User</Link>
+        </form>
+
+      </div>
+    </div>
+       
       </>
   )
 }

@@ -71,7 +71,7 @@ function MyOrder() {
                                         })
 
                                     )
-                                }) : ""
+                                }) : <div className='fs-1 w-full m-5 d-flex p-2 ' style={{display:'flex',justifyContent:"center",}}>No Order Yet, Order Now!!</div>
                         )
                     }) : ""}
                 </div>
